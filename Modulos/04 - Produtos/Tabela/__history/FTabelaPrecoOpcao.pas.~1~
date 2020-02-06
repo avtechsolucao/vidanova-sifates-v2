@@ -1,0 +1,90 @@
+{--------------------------------------------------------------------------------+
+|  SISTEMA...............: IndPCP (E TAMBEM AUTOR DO VESTISPCP - DESCONTINUADO)  |
+|  PORTE DE EMPRESA......: Destinado para Micro Empresas                         |
+|  SEGMENTO..............: Comércio em geral e industrias (vestuário)            |  
+|  LINGUAGEM/DB..........: Delphi 10.3 Rio   / Firebird 2.5                      | 
+|--------------------------------------------------------------------------------|
+|                                                                                |
+|  AUTOR/PROGRAMADOR.....: Adriano Zanini (2019)                                 |
+|  E-MAIL................: fontes@altaica.com.br                                 ||--------------------------------------------------------------------------------||  Você não pode comercializar o codigo-fonte. Nem mesmo parcialmente!           ||  Comercialize somente o sistema compilado (com o nome/interface que desejar).  |
++--------------------------------------------------------------------------------}
+
+unit FTabelaPrecoOpcao;
+
+interface
+
+uses
+   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+   Dialogs, StdCtrls;
+
+type
+   TFrmTabelaPrecoOpcao = class(TForm)
+      BtnReal: TButton;
+      BtnDolares: TButton;
+      BtnEuros: TButton;
+      BtnCancelar: TButton;
+      procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure BtnRealClick(Sender: TObject);
+      procedure BtnDolaresClick(Sender: TObject);
+      procedure BtnEurosClick(Sender: TObject);
+      procedure FormCreate(Sender: TObject);
+      procedure BtnCancelarClick(Sender: TObject);
+   private
+      { Private declarations }
+   public
+      { Public declarations }
+   end;
+
+var
+   FrmTabelaPrecoOpcao: TFrmTabelaPrecoOpcao;
+
+implementation
+
+uses Global, FTabelaPreco;
+
+{$R *.dfm}
+
+procedure TFrmTabelaPrecoOpcao.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+
+   IF Key = VK_ESCAPE then
+   begin
+      BtnCancelar.Click;
+      close;
+   end;
+
+end;
+
+procedure TFrmTabelaPrecoOpcao.BtnRealClick(Sender: TObject);
+begin
+   OpcaoTabela := 'R';
+   close;
+end;
+
+procedure TFrmTabelaPrecoOpcao.BtnDolaresClick(Sender: TObject);
+begin
+   OpcaoTabela := 'D';
+   close;
+
+end;
+
+procedure TFrmTabelaPrecoOpcao.BtnEurosClick(Sender: TObject);
+begin
+   OpcaoTabela := 'E';
+   close;
+
+end;
+
+procedure TFrmTabelaPrecoOpcao.FormCreate(Sender: TObject);
+begin
+   OpcaoTabela := '';
+end;
+
+procedure TFrmTabelaPrecoOpcao.BtnCancelarClick(Sender: TObject);
+begin
+   OpcaoTabela := '';
+   close;
+end;
+
+end.

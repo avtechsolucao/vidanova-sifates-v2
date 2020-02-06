@@ -1,0 +1,75 @@
+{--------------------------------------------------------------------------------+
+|  SISTEMA...............: IndPCP (E TAMBEM AUTOR DO VESTISPCP - DESCONTINUADO)  |
+|  PORTE DE EMPRESA......: Destinado para Micro Empresas                         |
+|  SEGMENTO..............: Comércio em geral e industrias (vestuário)            |  
+|  LINGUAGEM/DB..........: Delphi 10.3 Rio   / Firebird 2.5                      | 
+|--------------------------------------------------------------------------------|
+|                                                                                |
+|  AUTOR/PROGRAMADOR.....: Adriano Zanini (2019)                                 |
+|  E-MAIL................: fontes@altaica.com.br                                 ||--------------------------------------------------------------------------------||  Você não pode comercializar o codigo-fonte. Nem mesmo parcialmente!           ||  Comercialize somente o sistema compilado (com o nome/interface que desejar).  |
++--------------------------------------------------------------------------------}
+
+unit FEtiquetaClienteSelecao;
+
+interface
+
+uses
+   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+   Db,   ExtCtrls, quickrpt, Qrctrls,
+   QRPDFFilt, FireDAC.Comp.Client;
+
+type
+   TFrmEtiquetaClienteSelecao = class(TForm)
+      DB_Clientes: TFDQuery;
+    Prever: TQuickRep;
+    DetailBand1: TQRBand;
+    QRDBText9: TQRDBText;
+    QRDBText11: TQRDBText;
+    QRDBText12: TQRDBText;
+    QRLabel1: TQRLabel;
+    QRDBText3: TQRDBText;
+      procedure FormCreate(Sender: TObject);
+      procedure FormClose(Sender: TObject; var Action: TCloseAction);
+   private
+      { Private declarations }
+   public
+      { Public declarations }
+   end;
+
+var
+   FrmEtiquetaClienteSelecao: TFrmEtiquetaClienteSelecao;
+
+implementation
+
+uses FPrincipal, FBaseDados, Global,
+   FRelClientes, FRelClientesMalaDireta;
+
+{$R *.DFM}
+
+procedure TFrmEtiquetaClienteSelecao.FormCreate(Sender: TObject);
+begin
+
+   DB_Clientes.Close;
+   DB_Clientes.SQL.clear;
+   DB_Clientes.SQL.Add(' SELECT * from VIEW_CLIENTES ');
+   DB_Clientes.SQL.Add(' WHERE ');
+   DB_Clientes.SQL.Add(' CODIGO>0');
+   DB_Clientes.SQL.Add(' AND ');
+   DB_Clientes.SQL.Add(' ETIQUETA=' + QuotedStr('S') );
+   DB_Clientes.SQL.Add('ORDER BY ' + strOrdemDados);
+   DB_Clientes.open;
+
+
+   Prever.Preview;
+   Close;
+
+end;
+
+procedure TFrmEtiquetaClienteSelecao.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+   DB_Clientes.Close;
+   Action := cafree;
+end;
+
+end.

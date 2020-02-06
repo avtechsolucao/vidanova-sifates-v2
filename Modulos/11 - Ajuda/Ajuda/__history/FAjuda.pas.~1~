@@ -1,0 +1,51 @@
+{--------------------------------------------------------------------------------+
+|  SISTEMA...............: IndPCP (E TAMBEM AUTOR DO VESTISPCP - DESCONTINUADO)  |
+|  PORTE DE EMPRESA......: Destinado para Micro Empresas                         |
+|  SEGMENTO..............: Comércio em geral e industrias (vestuário)            | 
+|  LINGUAGEM/DB..........: Delphi 10.3 Rio   / Firebird 2.5                      | 
+|--------------------------------------------------------------------------------|
+|                                                                                |
+|  AUTOR/PROGRAMADOR.....: Adriano Zanini (2019)                                 |
+|  E-MAIL................: fontes@altaica.com.br                                 ||--------------------------------------------------------------------------------||  Você não pode comercializar o codigo-fonte. Nem mesmo parcialmente!           ||  Comercialize somente o sistema compilado (com o nome/interface que desejar).  |
++--------------------------------------------------------------------------------}
+
+unit FAjuda;
+
+interface
+
+uses
+   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+   ExtCtrls, StdCtrls, Menus, ToolWin, ComCtrls;
+
+type
+   TFrmAjuda = class(TForm)
+      MemoAjuda: TMemo;
+      Panel1: TPanel;
+      procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure FormClose(Sender: TObject; var Action: TCloseAction);
+   private
+      { Private declarations }
+   public
+      { Public declarations }
+   end;
+
+var
+   FrmAjuda: TFrmAjuda;
+
+implementation
+
+{$R *.DFM}
+
+procedure TFrmAjuda.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   IF Key = VK_ESCAPE THEN
+      CLOSE;
+end;
+
+procedure TFrmAjuda.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+   Action := caFree;
+end;
+
+end.

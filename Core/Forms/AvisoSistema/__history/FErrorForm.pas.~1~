@@ -1,0 +1,55 @@
+﻿{--------------------------------------------------------------------------------+
+|  SISTEMA...............: IndPCP (E TAMBEM AUTOR DO VESTISPCP - DESCONTINUADO)  |
+|  PORTE DE EMPRESA......: Destinado para Micro Empresas                         |
+|  SEGMENTO..............: Comércio em geral e industrias (vestuário)            |  
+|  LINGUAGEM/DB..........: Delphi 10.3 Rio   / Firebird 2.5                      | 
+|--------------------------------------------------------------------------------|
+|                                                                                |
+|  AUTOR/PROGRAMADOR.....: Adriano Zanini (2019)                                 |
+|  E-MAIL................: fontes@altaica.com.br                                 ||--------------------------------------------------------------------------------||  Você não pode comercializar o codigo-fonte. Nem mesmo parcialmente!           ||  Comercialize somente o sistema compilado (com o nome/interface que desejar).  |
++--------------------------------------------------------------------------------}
+
+unit FErrorForm;
+
+interface
+
+uses
+   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+   StdCtrls, ExtCtrls, ActnList, pngimage, jpeg;
+
+type
+   TFrmErrorForm = class(TForm)
+    Image1: TImage;
+    Panel1: TPanel;
+    MemoAviso: TMemo;
+    ModuloID: TMemo;
+    Panel2: TPanel;
+    Button1: TButton;
+      procedure Button1Click(Sender: TObject);
+      procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+   private
+      { Private declarations }
+   public
+      { Public declarations }
+   end;
+
+var
+   FrmErrorForm: TFrmErrorForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmErrorForm.Button1Click(Sender: TObject);
+begin
+   close;
+end;
+
+procedure TFrmErrorForm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if Key = vk_escape then
+      close;
+end;
+
+end.

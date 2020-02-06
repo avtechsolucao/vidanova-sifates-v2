@@ -1,0 +1,40 @@
+{--------------------------------------------------------------------------------+
+|  SISTEMA...............: IndPCP (E TAMBEM AUTOR DO VESTISPCP - DESCONTINUADO)  |
+|  PORTE DE EMPRESA......: Destinado para Micro Empresas                         |
+|  SEGMENTO..............: Comércio em geral e industrias (vestuário)            |  
+|  LINGUAGEM/DB..........: Delphi 10.3 Rio   / Firebird 2.5                      | 
+|--------------------------------------------------------------------------------|
+|                                                                                |
+|  AUTOR/PROGRAMADOR.....: Adriano Zanini (2019)                                 |
+|  E-MAIL................: fontes@altaica.com.br                                 ||--------------------------------------------------------------------------------||  Você não pode comercializar o codigo-fonte. Nem mesmo parcialmente!           ||  Comercialize somente o sistema compilado (com o nome/interface que desejar).  |
++--------------------------------------------------------------------------------}
+
+
+unit FastReport;
+
+interface
+
+uses
+   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+   Dialogs, DB,
+
+   frxExportPDF, frxDMPExport, frxOLE, frxDesgn, frxCross,
+   frxRich, frxBarcode, frxExportText, frxExportImage, frxExportHTML,
+   frxExportXLS, frxExportMail, frxClass, frxExportRTF,
+   Classe.Global;
+
+   Procedure prcFastReportEmailConfigurar(Destinatario: String);
+   
+implementation
+
+
+uses fBaseComponentes, Global, SQLServer, Biblioteca;
+
+
+Procedure prcFastReportEmailConfigurar(Destinatario: String);
+Begin
+   dmBaseComponentes.frxMailExport1.Address     := LowerCase(Destinatario);
+   dmBaseComponentes.frxMailExport1.FromCompany :=FParametros.Empresa.NomeFantasia;
+End;
+
+end.

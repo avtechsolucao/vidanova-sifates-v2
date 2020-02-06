@@ -1,0 +1,107 @@
+{--------------------------------------------------------------------------------+
+|  SISTEMA...............: IndPCP (E TAMBEM AUTOR DO VESTISPCP - DESCONTINUADO)  |
+|  PORTE DE EMPRESA......: Destinado para Micro Empresas                         |
+|  SEGMENTO..............: Comércio em geral e industrias (vestuário)            |  
+|  LINGUAGEM/DB..........: Delphi 10.3 Rio   / Firebird 2.5                      | 
+|--------------------------------------------------------------------------------|
+|                                                                                |
+|  AUTOR/PROGRAMADOR.....: Adriano Zanini (2019)                                 |
+|  E-MAIL................: fontes@altaica.com.br                                 ||--------------------------------------------------------------------------------||  Você não pode comercializar o codigo-fonte. Nem mesmo parcialmente!           ||  Comercialize somente o sistema compilado (com o nome/interface que desejar).  |
++--------------------------------------------------------------------------------}
+
+unit FTabelaPrecoGradePrecos;
+
+interface
+
+uses
+   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+   Dialogs, ExtCtrls, Grids, StdCtrls;
+
+type
+   TFrmTabelaPrecoGradePrecos = class(TForm)
+      Panel1: TPanel;
+    StringGridOpcoes: TStringGrid;
+      procedure FormClose(Sender: TObject; var Action: TCloseAction);
+      procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure FormCreate(Sender: TObject);
+      procedure FormShow(Sender: TObject);
+    procedure StringGridOpcoesCellValidate(Sender: TObject; ACol, ARow: Integer;
+      var Value: string; var Valid: Boolean);
+   private
+      { Private declarations }
+   public
+      { Public declarations }
+   end;
+
+var
+   FrmTabelaPrecoGradePrecos: TFrmTabelaPrecoGradePrecos;
+
+implementation
+
+uses Biblioteca_pcp, Global, FPrincipal, SQLServer;
+
+{$R *.dfm}
+
+procedure TFrmTabelaPrecoGradePrecos.FormCreate(Sender: TObject);
+begin
+   sGradeEditada :=false;
+
+   GradeProduto_Montar(strReferencia, StringGridOpcoes);
+
+   GradeTabelaPrecosCarregar(nTabelaPreco, strReferencia, StringGridOpcoes);
+
+
+end;
+
+procedure TFrmTabelaPrecoGradePrecos.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+
+   GradeTabelaPrecosSalvar(nTabelaPreco,  strReferencia, StringGridOpcoes);
+
+   Action := Cafree;
+
+end;
+
+procedure TFrmTabelaPrecoGradePrecos.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+
+   if Key = VK_F3 then
+   begin
+      //StringGridOpcoes.Clear;
+      GradeZerar(StringGridOpcoes);
+
+      GradeProduto_Montar_OrdemProducaoProduzidos(strReferencia, StringGridOpcoes);
+   end;
+
+   if Key = VK_ESCAPE then
+      close;
+
+end;
+
+procedure TFrmTabelaPrecoGradePrecos.FormShow(Sender: TObject);
+begin
+
+   Width := StringGridOpcoes.Width + 15;
+   Caption := 'Tabela de Preços | Grade de Valores: ' + IntToStr(nTabelaPreco);
+
+   Update;
+
+end;
+
+procedure TFrmTabelaPrecoGradePrecos.StringGridOpcoesCellValidate(
+  Sender: TObject; ACol, ARow: Integer; var Value: string; var Valid: Boolean);
+begin
+   sGradeEditada :=True;
+
+  strCor                :=StringGridOpcoes.Cells[0, ARow];
+  strTamanho            :=StringGridOpcoes.Cells[ACol, 0];
+  nValorDigitado      :=StrToFloatDef(StringGridOpcoes.Cells[ACol, ARow], 0) ;
+
+
+end;
+
+
+
+end.
