@@ -2,7 +2,7 @@
 Projeto delphi para controle de vendas e estoque voltado a pequenos negócios<br>
 O projeto ainda NÃO ESTÁ FINALIZADO!
 
-## Developer Language:<br>
+## Language:
 Delphi 10.3 (Rio)
 
 ## Delphi Components:
@@ -13,8 +13,7 @@ QuickReport (Reports to PDA); <br>
 Fortesreport (Reports to Selling Form); <br>
 Vcl Ribbon. <br>
 ### Pagos
-EditDialog (Search Edit); <br>
-EditSearch; <br>
+Edit Dialog Search; <br>
 
 ## Database: 
 Firebird v2.5
