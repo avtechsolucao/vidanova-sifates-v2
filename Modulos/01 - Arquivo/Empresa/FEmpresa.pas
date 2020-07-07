@@ -293,7 +293,7 @@ implementation
 
 uses Biblioteca, FBaseDados, Global,
    Clientes, FPrincipal, MovProdutos,
-   Biblioteca_pcp, FBaseDados_PCP, SQLServer,
+   SQLServer,
   FControleCaixa, FControleBancario;
 
 {$R *.DFM}

@@ -36,8 +36,6 @@ type
    private
       { Private declarations }
 
-    procedure prcMapaGrade;
-
    public
       { Public declarations }
    end;
@@ -50,7 +48,7 @@ var
 implementation
 
 uses FPrincipal, SQLServer, Biblioteca, Global, Classe.Usuarios, FPedidoVenda,
-  Biblioteca_pcp, FProdutosQuantidade;
+  FProdutosQuantidade;
 
 {$R *.dfm}
 
@@ -110,7 +108,7 @@ begin
       End;
 
       // criar mapeamento de grade, caso nao exista;
-      prcMapaGrade;
+      //prcMapaGrade;
 
       // checar se ha estoque para o produto informado
       {
@@ -144,44 +142,6 @@ begin
 
 
    End;
-
-end;
-
-procedure TFrmProdutosQuantidadeCodigoBarras.prcMapaGrade;
-begin
-
-   // verificar se existe
-   if fncValidaReferenciaQuantidadeGrade(strProduto)=false then
-   begin
-
-      FrmProdutosQuantidade.db_referencias.Append;
-      FrmProdutosQuantidade.db_referencias.FieldByName('REFERENCIA').AsString    :=  RetornaIdentificadorReferencia(strProduto);
-      FrmProdutosQuantidade.db_referencias.FieldByName('IDENTIFICADOR').AsString :=  strProduto;
-
-     // SALVAR ITENS DO PEDIDO DE VENDA
-     If (FrmProdutosQuantidade.db_referencias.State in [dsedit, dsinsert]) then
-     Begin
-        FrmProdutosQuantidade.db_referencias.Post;
-     End;
-
-
-      FrmProdutosQuantidade.db_referencias.Refresh;
-   end;
-
-   // verificar se existe mapeamento
-   if fncValidaReferenciaQuantidadeGrade(strProduto)=false then
-   begin
-
-      GradeProduto_Montar(RetornaIdentificadorReferencia(strProduto),
-                       StringGridOpcoes
-                       );
-
-      CadProduto_EstoqueSalvar(StrToIntDef(GetProdutoCampo(RetornaIdentificadorReferencia(strProduto),'CODIGO'),0),
-                                 RetornaIdentificadorReferencia(strProduto),
-                                 StringGridOpcoes);
-   end;
-
-
 
 end;
 

@@ -1976,7 +1976,6 @@ object FrmCompras: TFrmCompras
     object Etiquetas1: TMenuItem
       Caption = 'Etiquetas...'
       Hint = 'Imprimir etiquetas de produtos'
-      OnClick = Etiquetas1Click
     end
   end
   object DS_CtaPagar: TDataSource

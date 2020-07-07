@@ -128,7 +128,7 @@ begin
      End;
      FrmImpressao.ShowModal();
   finally
-    prcStatusMessage('','',False);
+    //prcStatusMessage('','',False);
     FreeAndNil(FrmImpressao);
   end;
 End;

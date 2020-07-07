@@ -165,8 +165,7 @@ var
 
 implementation
 
-uses FPrincipal, SQLServer, Biblioteca, Global,  FBaseDados,
-     FOpcaoVenda, FVendaCodigoBarra, FGeraParcelasCupomNaoFiscal, FRelEntregas,
+uses FPrincipal, SQLServer, Biblioteca, Global,  FBaseDados, FRelEntregas,
   FTerceirizadoLancaFinanceiroPagar;
 
 {$R *.dfm}

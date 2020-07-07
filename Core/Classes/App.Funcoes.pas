@@ -20,7 +20,6 @@ uses
   ACBrValidador, ACBrUtil, ACBrDFeSSL, System.DateUtils, ACBrNFe, ACBrMail;
 
   procedure ObjetosHabilitar(const aObjetos : TArray<TWinControl>;aCondicao : Boolean);
-  procedure EnviarEmailNF(aVenda : Integer; ACBrNFe1: TACBrNFe; aManual : Boolean=False);
   Procedure SetCertificadoDigital(aACBrNFe: TACBrNFe; const aTipoSSL: String);
 
 implementation
@@ -33,75 +32,6 @@ var
 begin
   for I := Low(aObjetos) to High(aObjetos) do
     aObjetos[i].Enabled :=aCondicao;
-end;
-
-procedure EnviarEmailNF(aVenda : Integer; ACBrNFe1: TACBrNFe; aManual : Boolean=False);
-var
- mDQuery       : TFDQuery;
- CC            : TStrings;
- mMSG          : TStrings;
- mEmailPara    : string;
- mAssunto      : string;
- mArquivoXML   : String;
- mNotaFiscal   : String;
-begin
-  if (FParametros.NFE.EnviarEmail = False) and (aManual=False) then
-     exit;   // se não for pra enviar email automaticamente, cancelar envio.
-  if Trim(ACBrNFe1.MAIL.Host) = '' then
-     exit;  // se não tiver servidor de saida, cancelar envio.
-
-  QueryObjCriar(mDQuery);
-  try
-    mDQuery.Close;
-    mDQuery.SQL.Clear;
-    mDQuery.SQL.Add('SELECT * FROM VENDAS');
-    mDQuery.SQL.Add('WHERE');
-    mDQuery.SQL.Add('CODIGO='+aVenda.ToString);
-    mDQuery.SQL.Add('');
-    mDQuery.Open;
-    mEmailPara  := GetClienteCampo(mDQuery.FieldByName('CLIENTE').AsInteger,'email');
-    if mEmailPara.IsEmpty then
-    begin
-      Informar('Cliente não tem email cadastrado. '+sLineBreak+sLineBreak+'Não foi possivel enviar XML da NF-e por email.');
-      exit; // se não tiver email, cancelar envio
-    end;
-    mNotaFiscal := ZeroEsquerda(mDQuery.FieldByName('NOTAFISCAL').AsString,6);
-    mEmailPara  := GetClienteCampo(mDQuery.FieldByName('CLIENTE').AsInteger,'email');
-    mAssunto    := 'Nota Fiscal: '+mNotaFiscal;
-
-    mArquivoXML := Trim(mDQuery.FieldByName('NFE_ARQUIVO').AsString);
-    if not FileExists(mArquivoXML) then
-    begin
-      Informar('Arquivo XML não foi gerado para enviar por e-mail.');
-      exit;
-    end;
-    CC    := TstringList.Create;
-    mMSG  := TstringList.Create;
-    ACBrNFe1.NotasFiscais.Clear;
-    ACBrNFe1.NotasFiscais.LoadFromFile(mArquivoXML);
-    mMSG.Text    := mAssunto;
-    try
-       prcStatusMessage('Enviando Nota Fiscal por email',
-                        'Aguarde.... enviando XML da NF: "'+mNotaFiscal+ '" para o email: "'+mEmailPara+'"',
-                        True);
-       ACBrNFe1.NotasFiscais.Items[0].EnviarEmail( mEmailPara,
-                                                    mAssunto,
-                                                    mMSG,
-                                                    True,  // Enviar PDF junto
-                                                    CC,    // Lista com emails que serÃ£o enviado cÃ³pias - TStrings
-                                                    nil); // Lista de anexos - TStrings
-    finally
-      prcStatusMessage('','',False);
-      CC.Free;
-      mMSG.Free;
-    end;
-
-
-
-  finally
-    QueryObjLiberar(mDQuery);
-  end;
-
 end;
 
 Procedure SetCertificadoDigital(aACBrNFe: TACBrNFe; const aTipoSSL: String);

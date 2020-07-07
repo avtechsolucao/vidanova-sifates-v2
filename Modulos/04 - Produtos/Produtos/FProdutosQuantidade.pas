@@ -146,8 +146,7 @@ var
 implementation
 
 uses FPrincipal, Biblioteca, Classe.Global, Global,
-    FProdutosQuantidadeGrade, FProdutosQuantidadeGradeEditar,
-  FProdutosQuantidadeCodigoBarras, SQLServer;
+     FProdutosQuantidadeCodigoBarras, SQLServer;
 
 {$R *.dfm}
 
@@ -187,11 +186,6 @@ begin
       Begin
          strProduto :=db_referencias.FieldByName('REFERENCIA').AsString;
 
-        if ValidarReferenciaCorTamanho(strProduto) Then
-        begin
-            FrmProdutosQuantidadeGradeEditar := TFrmProdutosQuantidadeGradeEditar.Create(self);
-            FrmProdutosQuantidadeGradeEditar.ShowModal;
-        end;
          strProduto :='';
       End;
 

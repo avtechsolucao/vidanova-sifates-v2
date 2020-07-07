@@ -3963,7 +3963,6 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'actEstoque'
       Caption = 'Gerar C'#243'digo de Barras - T'#233'rmica'
       ImageIndex = 15
-      OnExecute = actEstoqueCodigoBarraTermicaExecute
     end
     object actConfigurarParametros: TAction
       Category = 'actConfiguracao'
@@ -4002,7 +4001,6 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Etiquetas'
       ImageIndex = 1
       Visible = False
-      OnExecute = actConfigurarEtiquetasExecute
     end
     object actConfigurarNFE: TAction
       Category = 'actConfiguracao'
@@ -4182,19 +4180,16 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'actPCP'
       Caption = 'Lote de Produ'#231#227'o'
       ImageIndex = 67
-      OnExecute = actPCPLoteProducaoExecute
     end
     object actCadastrosGrifes: TAction
       Category = 'actCadastrosGrades'
       Caption = 'Grifes'
       ImageIndex = 93
-      OnExecute = actCadastrosGrifesExecute
     end
     object actCadastrosColecao: TAction
       Category = 'actCadastrosGrades'
       Caption = 'Cole'#231#227'o'
       ImageIndex = 107
-      OnExecute = actCadastrosColecaoExecute
     end
     object actCadastrosFaixaEtaria: TAction
       Category = 'actCadastros'
@@ -4205,19 +4200,16 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'actCadastros'
       Caption = 'Fases'
       ImageIndex = 77
-      OnExecute = actCadastrosFasesExecute
     end
     object actCadastrosFasesGrade: TAction
       Category = 'actCadastros'
       Caption = 'Fase de Produ'#231#227'o'
       ImageIndex = 108
-      OnExecute = actCadastrosFasesGradeExecute
     end
     object actCadastrosMaquinas: TAction
       Category = 'actCadastros'
       Caption = 'M'#225'quinas'
       ImageIndex = 112
-      OnExecute = actCadastrosMaquinasExecute
     end
     object actConfigurarCotacaoMoeda: TAction
       Category = 'actCadastros'
@@ -4229,67 +4221,56 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'actPCP'
       Caption = 'Etiqueta de Composi'#231#227'o'
       ImageIndex = 92
-      OnExecute = actPCPEtiquetaComposicaoExecute
     end
     object actCadastrosCores: TAction
       Category = 'actCadastrosGrades'
       Caption = 'Cores'
       ImageIndex = 111
-      OnExecute = actCadastrosCoresExecute
     end
     object actCadastrosTamanhos: TAction
       Category = 'actCadastrosGrades'
       Caption = 'Tamanhos'
       ImageIndex = 106
-      OnExecute = actCadastrosTamanhosExecute
     end
     object actCadastrosGradesTamanho: TAction
       Category = 'actCadastrosGrades'
       Caption = 'Grade de Tamanhos'
       ImageIndex = 40
-      OnExecute = actCadastrosGradesTamanhoExecute
     end
     object actPCPDefeitos: TAction
       Category = 'actPCP'
       Caption = 'Defeitos'
       ImageIndex = 63
-      OnExecute = actPCPDefeitosExecute
     end
     object actPCPQualidades: TAction
       Category = 'actPCP'
       Caption = 'Qualidade'
       ImageIndex = 96
-      OnExecute = actPCPQualidadesExecute
     end
     object actPCPProcessos: TAction
       Category = 'actPCP'
       Caption = 'Processos de Produ'#231#227'o'
       ImageIndex = 103
-      OnExecute = actPCPProcessosExecute
     end
     object actPCPFichaTecnica: TAction
       Category = 'actPCP'
       Caption = 'Ficha T'#233'cnica'
       ImageIndex = 100
-      OnExecute = actPCPFichaTecnicaExecute
     end
     object actChaoFabricaOrdemProducao: TAction
       Category = 'actChaoFabrica'
       Caption = 'Ordem de Produ'#231#227'o'
       ImageIndex = 97
-      OnExecute = actChaoFabricaOrdemProducaoExecute
     end
     object actChaoFabricaAndamentoFaseProducao: TAction
       Category = 'actChaoFabrica'
       Caption = 'Andamento de Produ'#231#227'o'
       ImageIndex = 108
-      OnExecute = actChaoFabricaAndamentoFaseProducaoExecute
     end
     object actPCPRelatorios: TAction
       Category = 'actPCP'
       Caption = 'Relat'#243'rios'
       ImageIndex = 91
-      OnExecute = actPCPRelatoriosExecute
     end
     object actVendasPedidosEmitir: TAction
       Category = 'actVendasPedidos'
@@ -4309,7 +4290,6 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'actVendasPedidos'
       Caption = 'Confer'#234'ncia de Pedido'
       ImageIndex = 84
-      OnExecute = actVendasPedidosConferenciaExecute
     end
     object actVendasPedidosRelatorio: TAction
       Category = 'actVendasPedidos'
@@ -4322,25 +4302,21 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'actVendas'
       Caption = 'Emitir NF-e'
       ImageIndex = 81
-      OnExecute = actVendasEmitirNFEExecute
     end
     object actVendasConsultar: TAction
       Category = 'actVendas'
       Caption = 'Consultar NF-e/NFC-e'
       ImageIndex = 81
-      OnExecute = actVendasConsultarExecute
     end
     object actVendasExpressa: TAction
       Category = 'actVendas'
       Caption = 'Venda Expressa'
       ImageIndex = 18
-      OnExecute = actVendasExpressaExecute
     end
     object actEstoqueCodigoBarraJatoTintas: TAction
       Category = 'actEstoque'
       Caption = 'Gerar C'#243'digo de Barras - Jato de Tintas'
       ImageIndex = 15
-      OnExecute = actEstoqueCodigoBarraJatoTintasExecute
     end
     object actEstoquePesquisaEstoque: TAction
       Category = 'actEstoque'
@@ -4488,7 +4464,6 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'actTransporte'
       Caption = 'Etiqueta de Embalagem'
       ImageIndex = 85
-      OnExecute = actTransporteEtiquetasExecute
     end
     object actTransporteRomaneio: TAction
       Category = 'actTransporte'
@@ -4557,7 +4532,6 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'actAjuda'
       Caption = 'Calend'#225'rio'
       ImageIndex = 9
-      OnExecute = actAjudaCalendarioExecute
     end
     object actComprasRelatorios: TAction
       Category = 'actCompras'
@@ -4683,7 +4657,6 @@ object FrmPrincipal: TFrmPrincipal
       Category = 'AppMenu'
       Caption = 'Editor de Texto'
       ImageIndex = 1
-      OnExecute = Action1Execute
     end
     object AppMenuSair: TAction
       Category = 'AppMenu'

@@ -383,8 +383,7 @@ var
 implementation
 
 uses FPrincipal, SQLServer, Biblioteca, Global, Classe.Usuarios, FBaseDados,
-  FProdutosGrade, FProdutosGradeEditar, MovProdutos, FBaseDados_PCP,
-  Biblioteca_pcp;
+  MovProdutos;
 
 {$R *.dfm}
 
@@ -404,7 +403,6 @@ begin
    QryANP.Open;
 
    // A=automático (numerico)     /    M=manual (até 30 caracteres)
-   FrmProdutosGrade   := TFrmProdutosGrade.create(self);
    db_cores_Modelos.Open;
    db_GradeLista.Open;
 end;
@@ -800,7 +798,6 @@ begin
       Abort;
    End;
    FrmFrameBotoes1.SpbEditarClick(Sender);
-   FrmProdutosGrade.ShowModal;
 end;
 
 procedure TFrmProdutosDetalhados.CalculaCustos;

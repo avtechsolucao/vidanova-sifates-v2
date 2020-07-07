@@ -418,6 +418,10 @@ object FrmProdutosDetalhados: TFrmProdutosDetalhados
     TabOrder = 5
     object Tab0: TTabSheet
       Caption = 'Principal'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel2: TPanel
         Left = 0
         Top = 0
@@ -808,6 +812,10 @@ object FrmProdutosDetalhados: TFrmProdutosDetalhados
           object TabFiscal: TTabSheet
             Caption = 'Fiscal'
             ImageIndex = 2
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object gpbImpostos: TGroupBox
               AlignWithMargins = True
               Left = 3
@@ -3803,7 +3811,6 @@ object FrmProdutosDetalhados: TFrmProdutosDetalhados
     object db_GradeListaNometamanho: TStringField
       FieldKind = fkLookup
       FieldName = 'Nometamanho'
-      LookupDataSet = BaseDados_PCP.DB_Cad_Tamanhos
       LookupKeyFields = 'TAMANHO'
       LookupResultField = 'DESCRICAO'
       KeyFields = 'TAMANHO'

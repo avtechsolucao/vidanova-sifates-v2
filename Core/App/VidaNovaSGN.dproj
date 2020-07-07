@@ -134,9 +134,6 @@
         <DCCReference Include="..\Forms\AvisoSistema\FQuestionar.pas">
             <Form>FrmQuestionar</Form>
         </DCCReference>
-        <DCCReference Include="..\Forms\AtivarSistema\FAtivarSistema.pas">
-            <Form>FrmAtivarSistema</Form>
-        </DCCReference>
         <DCCReference Include="..\Forms\Frames\FDatas.pas">
             <Form>FrameDatas</Form>
             <DesignClass>TFrame</DesignClass>
@@ -155,9 +152,6 @@
         <DCCReference Include="..\..\Modulos\01 - Arquivo\Empresa\FEmpresaSelecionar.pas">
             <Form>FrmEmpresaSelecionar</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\01 - Arquivo\Etiquetas\FEtiquetaConfigurar.pas">
-            <Form>FrmEtiquetaConfigurar</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\01 - Arquivo\Login\FAcesso.pas">
             <Form>FrmAcesso</Form>
         </DCCReference>
@@ -169,15 +163,6 @@
         </DCCReference>
         <DCCReference Include="..\..\Modulos\01 - Arquivo\Rede_Servidor\FServidorSistema.pas">
             <Form>FrmServidorSistema</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\01 - Arquivo\Rede_Servidor\FServidorComputadoresRede.pas">
-            <Form>FrmServidorComputadoresRede</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\01 - Arquivo\RichEdit\FEditorTexto.pas">
-            <Form>FrmEditorTexto</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\01 - Arquivo\Usuarios\FAutenticarAcao.pas">
-            <Form>FrmAutenticarAcao</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\01 - Arquivo\Usuarios\FRelatorioUsuario.pas">
             <Form>FrmUsuarioLog</Form>
@@ -317,18 +302,6 @@
         <DCCReference Include="..\..\Modulos\03 - Fiscal\Situação Tributária\FSituacaoTributaria.pas">
             <Form>FrmSituacaoTributaria</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Etiquetas\FEtiquetaProdutosConfigurar.pas">
-            <Form>FrmEtiquetaProdutosConfigurar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Etiquetas\FEtiquetasGerar.pas">
-            <Form>FrmEtiquetasGerar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Etiquetas\FEtiquetasWindows.pas">
-            <Form>FrmEtiquetasWindows</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Etiquetas\FEtiquetaCriarGrade.pas">
-            <Form>FrmtiquetaCriarGrade</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\04 - Produtos\PesquisaPrecos\FBalcaoProdutos.pas">
             <Form>FrmBalcaoProdutos</Form>
         </DCCReference>
@@ -341,23 +314,11 @@
         <DCCReference Include="..\..\Modulos\04 - Produtos\Produtos\FProdutosCustoFracao.pas">
             <Form>FrmProdutosCustoFracao</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Produtos\FProdutosGrade.pas">
-            <Form>FrmProdutosGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Produtos\FProdutosGradeEditar.pas">
-            <Form>FrmProdutosGradeEditar</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\04 - Produtos\Produtos\FProdutosQuantidade.pas">
             <Form>FrmProdutosQuantidade</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\04 - Produtos\Produtos\FProdutosQuantidadeCodigoBarras.pas">
             <Form>FrmProdutosQuantidadeCodigoBarras</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Produtos\FProdutosQuantidadeGrade.pas">
-            <Form>FrmProdutosQuantidadeGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Produtos\FProdutosQuantidadeGradeEditar.pas">
-            <Form>FrmProdutosQuantidadeGradeEditar</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\04 - Produtos\ReajustePreco\FReajustePreco.pas">
             <Form>FrmReajustePreco</Form>
@@ -385,9 +346,6 @@
         </DCCReference>
         <DCCReference Include="..\..\Modulos\04 - Produtos\Tabela\FTabelaPreco.pas">
             <Form>FrmTabelaPreco</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\04 - Produtos\Tabela\FTabelaPrecoGradePrecos.pas">
-            <Form>FrmTabelaPrecoGradePrecos</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\04 - Produtos\Tabela\FTabelaPrecoOpcao.pas">
             <Form>FrmTabelaPrecoOpcao</Form>
@@ -419,131 +377,12 @@
         <DCCReference Include="..\..\Modulos\06 - Terceirizados\Remessa\FDistribuirRemessa.pas">
             <Form>FrmDistribuirRemessa</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\06 - Terceirizados\Remessa\FDistribuirRemessaGrade.pas">
-            <Form>FrmDistribuirRemessaGrade</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\06 - Terceirizados\Tabela de Precos\FTabelaPrecoServicos.pas">
             <Form>FrmTabelaPrecoServicos</Form>
-        </DCCReference>
-        <DCCReference Include="..\Classes\Biblioteca_pcp.pas"/>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducao.pas">
-            <Form>FrmFaseProducao</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoDefeito.pas">
-            <Form>FrmFaseProducaoDefeito</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoDefeitoEstornar.pas">
-            <Form>FrmFaseProducaoDefeitoEstornar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoLancaEstoque.pas">
-            <Form>FrmFaseProducaoLancaEstoque</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoLancaEstoqueCodigoBarras.pas">
-            <Form>FrmFaseProducaoLancaEstoqueCodigoBarras</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoPerda.pas">
-            <Form>FrmFaseProducaoPerda</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoPerdaEstornar.pas">
-            <Form>FrmFaseProducaoPerdaEstornar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoRetornoTerceirizados.pas">
-            <Form>FrmFaseProducaoRetornoTerceirizados</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoRetornoTerceirizadosGrade.pas">
-            <Form>FrmFaseProducaoRetornoTerceirizadosGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoSelecionar.pas">
-            <Form>FrmFaseProducaoSelecionar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoTransferirFase.pas">
-            <Form>FrmFaseProducaoTransferirFase</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Andamento.Producao\FFaseProducaoTransferirFaseGrade.pas">
-            <Form>FrmFaseProducaoTransferirFaseGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Colecao\FColecao.pas">
-            <Form>FrmColecao</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Custos\FParamCustos.pas">
-            <Form>FrmParamCustos</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Defeitos\FDefeitos.pas">
-            <Form>FrmDefeitos</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Etiquetas\FEtiquetas.pas">
-            <Form>FrmEtiquetas</Form>
         </DCCReference>
         <DCCReference Include="..\DataModule\FBaseDados.pas">
             <Form>BaseDados</Form>
             <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\DataModule\FBaseDados_PCP.pas">
-            <Form>BaseDados_PCP</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\FichaTecnica\FFichaTecnica.pas">
-            <Form>FrmFichaTecnica</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\FichaTecnica\FFichaTecnicaCores.pas">
-            <Form>FrmFichaTecnicaCores</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\FichaTecnica\FFichaTecnicaGradeFoto.pas">
-            <Form>FrmFichaTecnicaGradeFoto</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\FichaTecnica\FFichaTecnicaImprimir.pas">
-            <Form>FrmFichaTecnicaImprimir</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Grifes\FGrifes.pas">
-            <Form>FrmGrifes</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Lote.Producao\FLoteProducao.pas">
-            <Form>FrmLoteProducao</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Maquinas\FMaquinas.pas">
-            <Form>FrmMaquinas</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Ordem.Producao\FOrdemProducao.pas">
-            <Form>FrmOrdemProducao</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Ordem.Producao\FOrdemProducaoGrade.pas">
-            <Form>FrmOrdemProducaoGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Ordem.Producao\FOrdemProducaoMateriaPrimaBaixar.pas">
-            <Form>FrmOrdemProducaoMateriaPrimaBaixar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Ordem.Producao\FOrdemProducaoPedidos.pas">
-            <Form>FrmOrdemProducaoPedidos</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Ordem.Producao\FOrdemProducaoReferencias.pas">
-            <Form>FrmOrdemProducaoReferencias</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Processos\FProcessos.pas">
-            <Form>FrmProcessos</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Processos\FProcessosGrade.pas">
-            <Form>FrmProcessosGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Processos.Maquinas\FProcessos_Maquinas.pas">
-            <Form>FrmProcessos_Maquinas</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Processos.Operadores\FProcessos_Operadores.pas">
-            <Form>FrmProcessos_Operadores</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Qualidades\FQualidades.pas">
-            <Form>FrmQualidades</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Relatorios\FRelatorioProducao.pas">
-            <Form>FrmRelatorioProducao</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Tamanhos\FTamanhos.pas">
-            <Form>FrmTamanhos</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\TamanhosGrade\FGradeTamanhos.pas">
-            <Form>FrmGradeTamanhos</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\Codigobarra\FVendaCodigoBarra.pas">
-            <Form>FrmVendaCodigoBarra</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\08 - Vendas\Faturamento\FFat_RelComissao.pas">
             <Form>FrmFat_RelComissao</Form>
@@ -578,89 +417,17 @@
         <DCCReference Include="..\..\Modulos\08 - Vendas\Faturamento\FRelFaturamento.pas">
             <Form>FrmRelFaturamento</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\Gerar_parcelas\FGeraParcelasCupomNaoFiscal.pas">
-            <Form>FrmGeraParcelasCupomNaoFiscal</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\NotaFiscal\FGeraParcelasVenda.pas">
-            <Form>FrmGeraParcelasVenda</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\NotaFiscal\FNotaFiscal.pas">
-            <Form>FrmNotaFiscal</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\NotaFiscal\FNotaFiscalCancelar.pas">
-            <Form>FrmNotaFiscalCancelar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\NotaFiscal\FNotaFiscalEmitidas.pas">
-            <Form>FrmNotaFiscalEmitidas</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\NotaFiscal\FNotaFiscalSituacaoSEFAZ.pas">
-            <Form>FrmNotaFiscalSituacaoSEFAZ</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\NotaFiscal\FStatusNFe.pas">
-            <Form>FrmStatusNFe</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\NotaFiscal\FVendaDevolucaoOpcaoFinalizar.pas">
-            <Form>FrmVendaDevolucaoOpcaoFinalizar</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\NotaFiscal\FVisualizarParcelas.pas">
-            <Form>FrmVisualizarParcelas</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda\FPedidoAprovarVenda.pas">
             <Form>FrmPedidoAprovarVenda</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda\FPedidoVenda.pas">
             <Form>FrmPedidoVenda</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda\FPedidoVendaCodigoBarra.pas">
-            <Form>FrmPedidoVendaCodigoBarra</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda\FPedidoVendaGrade.pas">
-            <Form>FrmPedidoVendaGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda\FPedidoVendaGradePrecos.pas">
-            <Form>FrmPedidoVendaGradePrecos</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda\FPedidoVendaParcial.pas">
             <Form>FrmPedidoVendaParcial</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda - Conferencia\FOpcaoConferencia.pas">
-            <Form>FrmOpcaoConferencia</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda - Conferencia\FPedidoVendaConferencia.pas">
-            <Form>FrmPedidoVendaConferencia</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda - Conferencia\FPedidoVendaConferenciaCodigoBarra.pas">
-            <Form>FrmPedidoVendaConferenciaCodigoBarra</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda - Conferencia\FPedidoVendaConferenciaGrade.pas">
-            <Form>FrmPedidoVendaConferenciaGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\Romaneio\FEtiquetacaixa.pas">
-            <Form>FrmEtiquetacaixa</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\08 - Vendas\Romaneio\FRomaneio.pas">
             <Form>FrmRomaneio</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\TipoVenda\FOpcaoNotaFiscal.pas">
-            <Form>FrmOpcaoNotaFiscal</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\TipoVenda\FOpcaoVenda.pas">
-            <Form>FrmOpcaoVenda</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\VendaExpressa\FGeraParcelasVendaExpressa.pas">
-            <Form>FrmGeraParcelasVendaExpressa</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\VendaExpressa\FVendaCaixa_LocalizarPedido.pas">
-            <Form>FrmVendaCaixa_LocalizarPedido</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\VendaExpressa\FVendaDevolucaoProdutos.pas">
-            <Form>FrmVendaDevolucaoProdutos</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\VendaExpressa\FVendaExpressa.pas">
-            <Form>FrmVendaExpressa</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\08 - Vendas\VendaExpressa\FVendaExpressaFaturas.pas">
-            <Form>FrmVendaExpressaFaturas</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\09 - Financeiro\Bancos\FBancos.pas">
             <Form>FrmBancos</Form>
@@ -851,23 +618,14 @@
         <DCCReference Include="..\..\Modulos\11 - Ajuda\Ajuda\FAjudaBarraBotoes.pas">
             <Form>FrmAjudaBarraBotoes</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\11 - Ajuda\Calendario\FCalendario.pas">
-            <Form>FrmCalendario</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\05 - Compras\CodigoBarras\FCompraCodigoBarra.pas">
             <Form>FrmCompraCodigoBarra</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\05 - Compras\ComprasPagar\FComprasPagar.pas">
             <Form>FrmComprasPagar</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\05 - Compras\Etiquetas\FComprasEtiquetas.pas">
-            <Form>FrmComprasEtiquetas</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\05 - Compras\NotaFiscalEntrada\FCompras.pas">
             <Form>FrmCompras</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\05 - Compras\NotaFiscalEntrada\FComprasGradeEditar.pas">
-            <Form>FrmComprasGradeEditar</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\05 - Compras\NotaFiscalEntrada\FOpcaoNotaFiscalCompra.pas">
             <Form>FrmOpcaoNotaFiscalCompra</Form>
@@ -899,15 +657,6 @@
         <DCCReference Include="..\..\Modulos\02 - Cadastros\Veiculos\Relatorios\FRelVeiculosLista.pas">
             <Form>FrmRelVeiculosLista</Form>
         </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Cores\FCores.pas">
-            <Form>FrmCores</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Fases\FFasesGrade.pas">
-            <Form>FrmFasesGrade</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\07 - PCP\Fases\FFases.pas">
-            <Form>FrmFases</Form>
-        </DCCReference>
         <DCCReference Include="..\..\Modulos\09 - Financeiro\Contas\FConta.pas">
             <Form>FrmConta</Form>
         </DCCReference>
@@ -916,9 +665,6 @@
         <DCCReference Include="..\Classes\Classe.BancoDados.pas"/>
         <DCCReference Include="..\Classes\App.IniFiles.pas"/>
         <DCCReference Include="..\Classes\Classe.Beep.pas"/>
-        <DCCReference Include="..\Forms\Principal\FTelaPrincipal.pas">
-            <Form>FrmTelaPrincipal</Form>
-        </DCCReference>
         <DCCReference Include="..\Classes\App.Enumeradores.pas"/>
         <DCCReference Include="..\..\Modulos\04 - Produtos\Produtos\FProdutosDetalhados.pas">
             <Form>FrmProdutosDetalhados</Form>
@@ -943,9 +689,6 @@
         <DCCReference Include="..\Classes\Classe.CEP.pas"/>
         <DCCReference Include="..\..\Modulos\02 - Cadastros\Porte de Clientes\FPorteClientes.pas">
             <Form>FrmPorteClientes</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\Modulos\02 - Cadastros\Alertas Lancamentos\FAlertasLancamentos.pas">
-            <Form>FrmAlertasLancamentos</Form>
         </DCCReference>
         <DCCReference Include="..\..\Modulos\08 - Vendas\PedidoVenda\Relatorios\FRelPedidos.pas">
             <Form>FrmRelPedidos</Form>
@@ -985,7 +728,6 @@
         <DCCReference Include="..\..\Modulos\01 - Arquivo\Empresa\FEmpresa.pas">
             <Form>FrmEmpresa</Form>
         </DCCReference>
-        <DCCReference Include="..\Classes\Classe.Producao.pas"/>
         <DCCReference Include="..\..\Modulos\05 - Compras\NF-e_Entrada\FCompra.pas">
             <Form>FrmCompra</Form>
             <FormType>dfm</FormType>
@@ -996,7 +738,6 @@
         </DCCReference>
         <DCCReference Include="..\Classes\Classe.GetConnect.pas"/>
         <DCCReference Include="..\Classes\Biblioteca.pas"/>
-        <DCCReference Include="..\Classes\App.Licenca.pas"/>
         <DCCReference Include="..\..\Modulos\01 - Arquivo\Impressao\FImpressao.pas">
             <Form>FrmImpressao</Form>
             <FormType>dfm</FormType>
@@ -1075,7 +816,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Configuration="Release" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
@@ -1103,7 +844,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Configuration="Release" Class="UWP_DelphiLogo44">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>

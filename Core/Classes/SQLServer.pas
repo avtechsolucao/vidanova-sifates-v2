@@ -23,8 +23,7 @@ uses
    Classe.Parametros,
    Global,
    Classe.Global,
-   Classe.CEP,
-   Classe.Producao;
+   Classe.CEP;
 
 
 
@@ -102,8 +101,6 @@ Function GetNCMCEST(aNCM:String): String;
 Function fncProdutoGrade_retCampo(sReferencia,slCampo:String): String;
 
 Function prcOrdemProducao_retCampo(lnOrdemProducao:integer;slCampo:String) : String;
-
-Function GetQTDEAndamentoOP(aOP, aFase : Integer;  aReferencia:String) : TFaseQTD;
 
 Function prcOrdemProducaoAndamento_retCampo(lnOrdemProducao:integer;slIdentificador,slCampo:String) : String;
 
@@ -355,15 +352,6 @@ Procedure prcRegistrarUltimaVenda(lnCliente:Integer;lsOrigem:String);
 
 Procedure prcProdutoLancaGrade(nPedido:Integer;sReferencia: String);
 
-//------------------------------------------------
-// Versão DEMO
-//------------------------------------------------
-Procedure InserirLicenca(aCHAVE : String);
-Function  GetTempoLicenca : Double;
-//------------------------------------------------
-//
-//------------------------------------------------
-
 
 // --------------------------------------------------------------------------
 
@@ -384,7 +372,7 @@ Var
 
 implementation
 
-uses Biblioteca, FPrincipal, App.Licenca, App.Constantes;
+uses Biblioteca, FPrincipal, App.Constantes;
 
 ///--------------------------------------------------------------------------
 ///      CRIAR E DESTRUIR OBJETOS QUERY
@@ -3223,40 +3211,6 @@ begin
    QueryObjLiberar(FTBLOutrasFuncoes);
 end;
 
-Function GetQTDEAndamentoOP(aOP, aFase : Integer;  aReferencia:String) : TFaseQTD;
-begin
-   try
-     Result := TFaseQTD.Create;
-
-     QueryObjCriar(FTBLOutrasFuncoes);
-
-     // Atualizar Fase Destino
-     FTBLOutrasFuncoes.SQL.Clear;
-     FTBLOutrasFuncoes.SQL.Add(' SELECT SUM(QTDE_PRODUZIR) AS QTDE_PRODUZIR, SUM(QTDE_TRANSFERIDA) AS QTDE_TRANSFERIDA, SUM(QTDE_PENDENTE) AS QTDE_PENDENTE,  SUM(QTDE_DEFEITO) AS QTDE_DEFEITO, SUM(QTDE_PERDA) AS QTDE_PERDA ');
-     FTBLOutrasFuncoes.SQL.Add(' FROM PCP_ORDEMPRODUCAO_ANDAMENTO ');
-     FTBLOutrasFuncoes.SQL.Add(' WHERE                               ');
-     FTBLOutrasFuncoes.SQL.Add(' CODIGO=:CODIGO                      ');
-     FTBLOutrasFuncoes.SQL.Add(' AND                                 ');
-     FTBLOutrasFuncoes.SQL.Add(' REFERENCIA=:REFERENCIA        ');
-     FTBLOutrasFuncoes.SQL.Add(' AND                                 ');
-     FTBLOutrasFuncoes.SQL.Add(' FASE=:FASE                          ');
-     FTBLOutrasFuncoes.ParamByName('CODIGO').AsInteger       :=  aOP;
-     FTBLOutrasFuncoes.ParamByName('FASE').AsInteger         :=  aFase;
-     FTBLOutrasFuncoes.ParamByName('REFERENCIA').AsString    :=  aReferencia;
-     FTBLOutrasFuncoes.Open;
-
-     Result.QtdeProduzir     := FTBLOutrasFuncoes.FieldByName('QTDE_PRODUZIR').AsInteger;
-     Result.QtdeTransferida  := FTBLOutrasFuncoes.FieldByName('QTDE_TRANSFERIDA').AsInteger;
-     Result.QtdePendente     := FTBLOutrasFuncoes.FieldByName('QTDE_PENDENTE').AsInteger;
-     Result.QtdeDefeito      := FTBLOutrasFuncoes.FieldByName('QTDE_DEFEITO').AsInteger;
-     Result.QtdePerda        := FTBLOutrasFuncoes.FieldByName('QTDE_PERDA').AsInteger;
-   finally
-     FTBLOutrasFuncoes.Close;
-     QueryObjLiberar(FTBLOutrasFuncoes);
-   end;
-end;
-
-
 Function prcOrdemProducaoAndamento_retCampo(lnOrdemProducao:integer;slIdentificador,slCampo:String) : String;
 begin
    Result :='';
@@ -5165,65 +5119,6 @@ begin
   End;
 end;
 
-
-//---------------------------------------------------------------------
-// Checagem de prazo de licenciamento
-//---------------------------------------------------------------------
-Function  GetTempoLicenca : Double;
-var
-  mDecodificar : String;
-  mSequencia   : TStringDynArray;
-  mData, mDataLimite : TDate;
-  mDias : Integer;
-  mChave : String;
-
-  aDemoQuery : TFDQuery;
-  mData1  : Double;
-  mPrazo1 : Double;
-begin
-  Result  :=0;
-  mPrazo1 :=0;
-  mData := 0;
-  mDias := 0;
-
-  aDemoQuery            := TFDQuery.Create(Application);
-  aDemoQuery.Connection := FrmPrincipal.DBConexao;
-  try
-    aDemoQuery.SQL.Clear;
-    aDemoQuery.SQL.Add(' SELECT FIRST 1 * FROM LICENCA WHERE STATUS=''L'' ');   //L=LIBERADO
-    aDemoQuery.Open;
-    if aDemoQuery.IsEmpty then
-      exit;
-    //-------------------------------------------------------------------
-    // Decifrar chave
-    //-------------------------------------------------------------------
-    mChave := aDemoQuery.FieldByName('CHAVE').AsString;;
-    VerificarChave(mChave, mData, mDias);
-    {
-    mDecodificar := ReverterChave(mChave, _CHAVESEGREDO);
-    mSequencia   :=  mDecodificar.Split(['|']);
-    mData := StrToDateDef(mSequencia[0],0);
-    mDias := StrToIntDef(mSequencia[1],0);
-    }
-    mDataLimite := mData + mDias;
-    mPrazo1 :=mDataLimite - Date();
-    if mPrazo1<0 then
-      mPrazo1 := 0;
-    //-------------------------------------------------------------------
-    // Se prazo for igual a 0 (zero), bloqueia imediatamente.
-    //-------------------------------------------------------------------
-    if mPrazo1<1 then
-    begin
-       aDemoQuery.SQL.Clear;
-       aDemoQuery.SQL.Add(' UPDATE LICENCA SET STATUS=''B'' '); // B=BLOQUEADO
-       aDemoQuery.ExecSQL;
-    end;
-    Result := mPrazo1;
-  finally
-     aDemoQuery.Close;
-     aDemoQuery.free;
-  end;
-end;
 
 end.
 

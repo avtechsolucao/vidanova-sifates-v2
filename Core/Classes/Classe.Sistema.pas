@@ -48,9 +48,6 @@ type
       { Public declarations }
       constructor Create;
       Procedure   Clear;
-      Function ChecarLicencaUso : Boolean;
-
-
 
       property Empresa            : Integer             Read GetEmpresa        Write SetEmpresa;
       property PastaDrive         : WideString          read GetPastaDrive     write SetPastaDrive;
@@ -161,16 +158,6 @@ end;
 procedure TSistema.SetPastaPadrao(const Value: WideString);
 begin
   FPastaPadrao :=Value;
-end;
-
-Function TSistema.ChecarLicencaUso : Boolean;
-Var
- mDias: Double;
-begin
-  Result := False;
-  mDias:=0;
-  mDias:=GetTempoLicenca();
-  Result := mDias<1; // Retorna True, se prazo for menor que 1 (zero dia).
 end;
 
 end.

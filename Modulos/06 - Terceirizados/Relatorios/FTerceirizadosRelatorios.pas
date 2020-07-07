@@ -90,7 +90,7 @@ var
 
 implementation
 
-uses FPrincipal, Biblioteca, Biblioteca_pcp, Global;
+uses FPrincipal, Biblioteca, Global;
 
 {$R *.dfm}
 

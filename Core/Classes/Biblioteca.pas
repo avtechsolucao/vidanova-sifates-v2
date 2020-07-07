@@ -21,7 +21,6 @@ uses
    cxGrid, cxGridDBTableView,
    System.Generics.Collections,
    Classe.Global,
-   FStatusNFe,
    FireDAC.Comp.Client;
 
 type
@@ -313,8 +312,6 @@ function CriaSubDir(const NomeSubDir: string): boolean;
  /// </summary>
 
 function fncPrimeiraLetra(p_texto: string): string;
-
-Procedure prcStatusMessage(sTitulo:String='Processo em andamento...';sMessage: string='';lbAbrir:boolean=True);
 
 function Base64Encode(const S: AnsiString): AnsiString;
 
@@ -3521,29 +3518,6 @@ function fncPrimeiraLetra(p_texto: string): string;
 begin
  If p_texto <> '' Then
  result := UpperCase(Copy(p_texto,1,1))+LowerCase(Copy(p_texto,2,Length(p_texto)));
-end;
-
-Procedure prcStatusMessage(sTitulo:String='Processo em andamento...';sMessage: string='';lbAbrir:boolean=True);
-begin
-
-   Application.ProcessMessages;
-   if lbAbrir then
-   begin
-      if (FrmStatusNFe = nil) then
-         FrmStatusNFe := TFrmStatusNFe.Create(NIL);
-      FrmStatusNFe.FrmFrameBarra1.LblBarraTitulo.Caption := sTitulo;
-      FrmStatusNFe.lblStatus.Caption                     := sMessage;
-      FrmStatusNFe.Show;
-      FrmStatusNFe.BringToFront;
-   end
-   else
-   begin
-      if FrmStatusNFe<>nil then
-        FrmStatusNFe.close;
-   end;
-
-   Application.ProcessMessages;
-
 end;
 
 // criptografia

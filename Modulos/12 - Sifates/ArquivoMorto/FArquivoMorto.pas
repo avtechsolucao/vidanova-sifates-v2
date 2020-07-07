@@ -124,8 +124,7 @@ var
 
 implementation
 
-uses FPrincipal, SQLServer, Biblioteca, Global,
-  FProdutosQuantidadeGrade,  Classe.Usuarios;
+uses FPrincipal, SQLServer, Biblioteca, Global, Classe.Usuarios;
 
 {$R *.dfm}
 

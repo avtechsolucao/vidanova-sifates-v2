@@ -754,7 +754,8 @@ object FrmTerceirizadosRelatorios: TFrmTerceirizadosRelatorios
       ExplicitWidth = 690
     end
     inherited LblBarraTitulo: TLabel
-      Width = 709
+      Width = 297
+      Height = 23
       Caption = 'Terceirizados | Relat'#243'rios de Servi'#231'os'
       ExplicitWidth = 297
     end

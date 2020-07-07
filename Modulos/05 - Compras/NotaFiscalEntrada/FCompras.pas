@@ -220,7 +220,6 @@ type
     db_ComprasFORNECEDORPEDIDO: TIntegerField;
     DBEdit5: TDBEdit;
     db_ComprasDATAENTRADA: TSQLTimeStampField;
-      procedure Etiquetas1Click(Sender: TObject);
       procedure Mnu_EspelhoNFClick(Sender: TObject);
       procedure db_ComprasItensAfterPost(DataSet: TDataSet);
       procedure db_ComprasItensAfterDelete(DataSet: TDataSet);
@@ -299,8 +298,8 @@ var
 implementation
 
 uses FPrincipal, SQLServer, Biblioteca, Global, Classe.Usuarios, FComprasPagar,
-  FOpcaoNotaFiscalCompra, FComprasEtiquetas, FComprasImprimir,
-  FCompraCodigoBarra, FComprasGradeEditar;
+  FOpcaoNotaFiscalCompra, FComprasImprimir,
+  FCompraCodigoBarra;
 
 {$R *.DFM}
 
@@ -816,14 +815,6 @@ begin
 
 end;
 
-procedure TFrmCompras.Etiquetas1Click(Sender: TObject);
-begin
-
-   FrmComprasEtiquetas := TFrmComprasEtiquetas.create(self);
-   FrmComprasEtiquetas.ShowModal;
-
-end;
-
 procedure TFrmCompras.Importar_PedidoCompra(idPedidoCompra:Integer);
 begin
 
@@ -1169,12 +1160,9 @@ begin
         Begin
            db_ComprasItens.Post;
          End;
-         if ValidarReferenciaCorTamanho(db_ComprasItens.FieldByName('PRODUTO').AsString)=false Then
-            exit;
 
          strProduto :=db_ComprasItens.FieldByName('PRODUTO').AsString;
-         FrmComprasGradeEditar := TFrmComprasGradeEditar.create(self);
-         FrmComprasGradeEditar.ShowModal;
+
          strProduto :='';
          DBGrid_Produtos.SetFocus;
 

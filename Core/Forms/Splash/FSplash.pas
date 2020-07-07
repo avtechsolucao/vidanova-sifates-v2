@@ -51,7 +51,7 @@ implementation
 
 uses
   Global, Classe.Global, Biblioteca, SQLServer, Classe.GetConnect, App.Constantes,
-  App.Funcoes, FBaseDados, FAcesso, FBaseDados_PCP, FBaseComponentes,
+  App.Funcoes, FBaseDados, FAcesso, FBaseComponentes,
   FPrincipal;
 
 procedure TFrmSplash.VerificaConfigs;

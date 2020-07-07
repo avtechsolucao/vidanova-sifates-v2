@@ -146,8 +146,7 @@ var
 
 implementation
 
-uses FPrincipal, SQLServer, Biblioteca, Global,  FImprimirTabela,
-  FTabelaPrecoGradePrecos, Classe.Usuarios;
+uses FPrincipal, SQLServer, Biblioteca, Global,  FImprimirTabela, Classe.Usuarios;
 
 {$R *.dfm}
 

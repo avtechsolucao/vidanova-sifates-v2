@@ -897,7 +897,8 @@ object FrmRelPedidos: TFrmRelPedidos
       ExplicitWidth = 484
     end
     inherited LblBarraTitulo: TLabel
-      Width = 1064
+      Width = 258
+      Height = 23
       Caption = 'Relat'#243'rios de Pedidos de Vendas'
       ExplicitWidth = 258
     end

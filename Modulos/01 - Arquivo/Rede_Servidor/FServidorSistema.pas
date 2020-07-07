@@ -49,7 +49,6 @@ type
       procedure BtnTestarClick(Sender: TObject);
       procedure BtnOkClick(Sender: TObject);
       procedure BtnCancelarClick(Sender: TObject);
-      procedure BtnServidorClick(Sender: TObject);
       procedure MnuRestaurarClick(Sender: TObject);
       procedure btnfecharClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -71,7 +70,7 @@ var
 
 implementation
 
-uses Biblioteca, FPrincipal, Global, FServidorComputadoresRede, App.Constantes;
+uses Biblioteca, FPrincipal, Global, App.Constantes;
 
 {$R *.dfm}
 
@@ -165,12 +164,6 @@ begin
    PainelMsg.Caption := '';
    Update;
 
-end;
-
-procedure TFrmServidorSistema.BtnServidorClick(Sender: TObject);
-begin
-   FrmServidorComputadoresRede := TFrmServidorComputadoresRede.create(self);
-   FrmServidorComputadoresRede.ShowModal;
 end;
 
 procedure TFrmServidorSistema.btnfecharClick(Sender: TObject);

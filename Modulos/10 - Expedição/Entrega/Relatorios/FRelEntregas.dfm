@@ -419,7 +419,8 @@ object FrmRelEntregas: TFrmRelEntregas
       ExplicitWidth = 461
     end
     inherited LblBarraTitulo: TLabel
-      Width = 461
+      Width = 179
+      Height = 23
       Caption = 'Relat'#243'rios de Entregas'
       ExplicitWidth = 179
     end

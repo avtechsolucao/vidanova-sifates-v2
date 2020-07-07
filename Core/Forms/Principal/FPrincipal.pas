@@ -257,7 +257,6 @@ type
     procedure actConfigurarParametrosExecute(Sender: TObject);
     procedure actConfigurarWindowsExecute(Sender: TObject);
     procedure actConfigurarServidorExecute(Sender: TObject);
-    procedure actConfigurarEtiquetasExecute(Sender: TObject);
     procedure actConfigurarNFEExecute(Sender: TObject);
     procedure actConfigurarBoletoBancarioExecute(Sender: TObject);
     procedure actConfigurarImpressoraExecute(Sender: TObject);
@@ -279,7 +278,6 @@ type
     procedure actFiscalPlanoContasRelatoriosExecute(Sender: TObject);
     procedure Action134Execute(Sender: TObject);
     procedure actTransporteRomaneioExecute(Sender: TObject);
-    procedure actTransporteEtiquetasExecute(Sender: TObject);
     procedure actTransporteRelatoriosExecute(Sender: TObject);
     procedure actFinanceiroReceberLancamentoExecute(Sender: TObject);
     procedure actFinanceiroReceberBaixaExecute(Sender: TObject);
@@ -295,36 +293,16 @@ type
     procedure actCadastrosContasBancosExecute(Sender: TObject);
     procedure actCadastrosContasCorrenteExecute(Sender: TObject);
     procedure actFinanceiroMovimentoContasControleBancarioExecute(Sender: TObject);
-    procedure actCadastrosGrifesExecute(Sender: TObject);
-    procedure actCadastrosColecaoExecute(Sender: TObject);
-    procedure actCadastrosFasesExecute(Sender: TObject);
-    procedure actPCPEtiquetaComposicaoExecute(Sender: TObject);
-    procedure actCadastrosTamanhosExecute(Sender: TObject);
-    procedure actCadastrosGradesTamanhoExecute(Sender: TObject);
-    procedure actCadastrosCoresExecute(Sender: TObject);
-    procedure actPCPProcessosExecute(Sender: TObject);
-    procedure actPCPProcessosGradeExecute(Sender: TObject);
-    procedure actCadastrosMaquinasExecute(Sender: TObject);
-    procedure actPCPProcessoMaquinasExecute(Sender: TObject);
-    procedure actPCPDefeitosExecute(Sender: TObject);
-    procedure actPCPQualidadesExecute(Sender: TObject);
-    procedure actPCPProcessosOperadorExecute(Sender: TObject);
-    procedure actPCPFichaTecnicaExecute(Sender: TObject);
-    procedure actChaoFabricaOrdemProducaoExecute(Sender: TObject);
-    procedure actPCPRelatoriosExecute(Sender: TObject);
     procedure actClassificacaoProdutosGruposExecute(Sender: TObject);
     procedure actCadastrosSubgrupoExecute(Sender: TObject);
     procedure actCadastrosTiposProdutosExecute(Sender: TObject);
     procedure actEstoqueCadastrosExecute(Sender: TObject);
     procedure actGestaoTabelaPrecosExecute(Sender: TObject);
     procedure actEstoqueAtualizarExecute(Sender: TObject);
-    procedure actEstoqueCodigoBarraTermicaExecute(Sender: TObject);
     procedure actEstoqueRelatoriosExecute(Sender: TObject);
     procedure actEstoquePesquisaEstoqueExecute(Sender: TObject);
     procedure actVendasPedidosEmitirExecute(Sender: TObject);
     procedure actVendasPedidosAprovarExecute(Sender: TObject);
-    procedure actVendasEmitirNFEExecute(Sender: TObject);
-    procedure actVendasConsultarExecute(Sender: TObject);
     procedure actVendasDevolucaoExecute(Sender: TObject);
     procedure actVendasRelatoriosExecute(Sender: TObject);
     procedure actFinanceiroReceberRelatoriosExecute(Sender: TObject);
@@ -334,7 +312,6 @@ type
     procedure actVendasPedidosRelatorioExecute(Sender: TObject);
     procedure actAjudaOrganizarJanelasExecute(Sender: TObject);
     procedure actCadastrosAuxiliaresIBGECEPExecute(Sender: TObject);
-    procedure actVendasPedidosConferenciaExecute(Sender: TObject);
     procedure actAjudaSobreSistemaExecute(Sender: TObject);
     procedure actTerceirizadoPagamentosExecute(Sender: TObject);
     procedure actFinanceiroCaixaFluxoExecute(Sender: TObject);
@@ -346,16 +323,10 @@ type
     procedure actConfigurarEmpresasExecute(Sender: TObject);
     procedure actComprasPedidoExecute(Sender: TObject);
     procedure AppMenuSairExecute(Sender: TObject);
-    procedure actAjudaCalendarioExecute(Sender: TObject);
     procedure actFinanceiroReceberBorderoExecute(Sender: TObject);
     procedure actFinanceiroReceberBaixaLoteExecute(Sender: TObject);
     procedure actCadastrosFornecedorRelatorioExecute(Sender: TObject);
-    procedure actChaoFabricaAndamentoFaseProducaoExecute(Sender: TObject);
     procedure actFinanceiroPagarBaixasLoteExecute(Sender: TObject);
-    procedure actCadastrosFasesGradeExecute(Sender: TObject);
-    procedure actEstoqueCodigoBarraJatoTintasExecute(Sender: TObject);
-    procedure actPCPLoteProducaoExecute(Sender: TObject);
-    procedure actVendasExpressaExecute(Sender: TObject);
     procedure actGestaoMarkupExecute(Sender: TObject);
     procedure actTerceirizadosPrecosServicosExecute(Sender: TObject);
     procedure actFinanceiroPagarSubstituirExecute(Sender: TObject);
@@ -365,7 +336,6 @@ type
     procedure actCadastrosAuxiliaresCarteiraCobrancaExecute(Sender: TObject);
     procedure actFiscalNCMExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Action1Execute(Sender: TObject);
     procedure actCadastrosClienteTiposExecute(Sender: TObject);
     procedure Action2Execute(Sender: TObject);
     procedure actCadastrosGrupoComprasExecute(Sender: TObject);
@@ -417,7 +387,6 @@ type
     procedure IsFormCreated(FClass: TFormClass; var Instance);
     procedure CriarPastas;
     procedure MenusHabilitar;
-    procedure VerificarLicenca();
   end;
   Procedure TerminarAplicacao;
   procedure ActionVisivel(const aItemMenu : String; aVisivel : Boolean);
@@ -458,38 +427,33 @@ implementation
 uses
 
   Global, Biblioteca, FSplash, SQLServer, Classe.Global,
-  FFrameBotoes, FBaseDados, FAcesso, FBaseDados_PCP,
+  FFrameBotoes, FBaseDados, FAcesso,
   FBaseComponentes, FAtividades, FCarneImprimir, FCtaPagarBaixas,
   FCtaPagarBaixasLotes, FComissoes, FComissoesRelatorios,
   FControleChequesRecebidos, FControleChequesEmitidos, FCartaEmitir,
   FControleCaixa, FBancos, FContaCorrente, FControleBancario, FRecibo,
   FCotacaoMoeda, FCadClientes, FRelClientes, FTerceirizadoLancaFinanceiro,
-  FCtaPagar, FBordero, FCtaReceber, FNotaFiscal,
-  FPedidoVenda, FFaseProducao, FColecao, FDefeitos, FEtiquetas,
-  FFasesGrade, FGradeTamanhos, FGrifes, FMaquinas, FOrdemProducao,
-  FQualidades, FProcessos_Maquinas,
-  FProcessos_Operadores, FFichaTecnica, FRelatorioProducao, FTamanhos,
-  FRomaneio, FRelEntregas, FGeneros, FSituacaoTributaria,
-  FRelPlanoContas, FRelDemonstrativo, FEditorTexto, FCarteiraCobranca,
+  FCtaPagar, FBordero, FCtaReceber,
+  FPedidoVenda, FRomaneio, FRelEntregas, FGeneros, FSituacaoTributaria,
+  FRelPlanoContas, FRelDemonstrativo, FCarteiraCobranca,
   FMotivoBaixas, FCtaPagarSubstituirTitulos, FUsuarios, FAboutBox,
   FRelEstoque, FRelMovCaixa, FRelFluxoCaixa,
   FTransferenciaContas, FClientesGradeEdicao, FRelCtaPagar, FRelCtaReceber,
   FRelClientesMalaDireta, FRegioes, FColaborador, FFornecedores,
   FTransportadoras, FPlanoContas, FCFOP, FDepartamentos, FFormaPagto, FMarkup,
-  FVendaExpressa, FTabelaNCM, FSubGrupos, FTipoProduto, FProdutos,
-  FEtiquetasWindows, FServidorSistema, FTabelaPreco, FProdutosQuantidade,
-  FEtiquetasGerar, FPedidoCompra, FCompras, FEtiquetaConfigurar,
-  FTabelaPrecoServicos, FLoteProducao, FCalendario, FProdutosPesquisaPreco,
-  FConfigurar, FPedidoAprovarVenda, FVendaDevolucaoProdutos,
-  FCtaReceberBaixas, FCtaReceberBaixasLotes, FConciliacaoBanco, FBoletoBancario,
-  FEmpresaSelecionar, FPedidoVendaConferencia, FRelFaturamento,
-  FEtiquetacaixa, FCores, FFases, FConta, FTelaPrincipal, FProdutosDetalhados,
-  FGrupos, FAlertasLancamentos, FGrupoCompras, FTipoCliente,
+  FTabelaNCM, FSubGrupos, FTipoProduto, FProdutos,
+  FServidorSistema, FTabelaPreco, FProdutosQuantidade,
+  FPedidoCompra, FCompras,
+  FTabelaPrecoServicos, FProdutosPesquisaPreco,
+  FConfigurar, FPedidoAprovarVenda, FCtaReceberBaixas, FCtaReceberBaixasLotes, FConciliacaoBanco, FBoletoBancario,
+  FEmpresaSelecionar, FRelFaturamento,
+  FConta, FProdutosDetalhados,
+  FGrupos, FGrupoCompras, FTipoCliente,
   FPorteClientes, FRelPedidos,
   FLinhasProdutos, FEntidadeGrupo, FSegmento, FCidadeIBGE, App.Constantes,
   FTerceirizadosRelatorios, FRelCompras, FEmpresa, FDistribuirRemessa,
-  FNotaFiscalEmitidas, FProcessosGrade, FProcessos, FCompra, Classe.GetConnect,
-  FAtivarSistema, FClientesSifates, FArquivoMorto;
+  FCompra, Classe.GetConnect,
+  FClientesSifates, FArquivoMorto;
 
 procedure TerminarAplicacao;
 begin
@@ -505,9 +469,6 @@ procedure TFrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   if Assigned(BaseDados) then
     BaseDados.Free;
-
-  if Assigned(BaseDados_PCP) then
-    BaseDados_PCP.Free;
 
   if Assigned(dmBaseComponentes) then
     dmBaseComponentes.Free;
@@ -1035,120 +996,6 @@ begin
   IsFormCreated(TFrmCtaReceber, FrmCtaReceber);
 end;
 
-procedure TFrmPrincipal.actVendasEmitirNFEExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmNotaFiscal, FrmNotaFiscal);
-end;
-
-procedure TFrmPrincipal.actVendasConsultarExecute(Sender: TObject);
-begin
-   FrmNotaFiscalEmitidas := TFrmNotaFiscalEmitidas.create(self);
-   FrmNotaFiscalEmitidas.Show;
-end;
-
-procedure TFrmPrincipal.actChaoFabricaAndamentoFaseProducaoExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmFaseProducao, FrmFaseProducao);
-end;
-
-procedure TFrmPrincipal.actCadastrosColecaoExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmColecao, FrmColecao);
-end;
-
-procedure TFrmPrincipal.actCadastrosCoresExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmCores, FrmCores);
-end;
-
-procedure TFrmPrincipal.actPCPDefeitosExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmDefeitos, FrmDefeitos);
-end;
-
-procedure TFrmPrincipal.actPCPEtiquetaComposicaoExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmEtiquetas, FrmEtiquetas);
-end;
-
-procedure TFrmPrincipal.actCadastrosFasesExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmFases, FrmFases);
-end;
-
-procedure TFrmPrincipal.actCadastrosFasesGradeExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmFasesGrade, FrmFasesGrade);
-end;
-
-procedure TFrmPrincipal.actCadastrosGradesTamanhoExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmGradeTamanhos, FrmGradeTamanhos);
-end;
-
-procedure TFrmPrincipal.actCadastrosGrifesExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmGrifes, FrmGrifes);
-end;
-
-procedure TFrmPrincipal.actCadastrosMaquinasExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmMaquinas, FrmMaquinas);
-end;
-
-procedure TFrmPrincipal.actChaoFabricaOrdemProducaoExecute(Sender: TObject);
-begin
-  IsFormCreated(TFrmOrdemProducao, FrmOrdemProducao);
-end;
-
-procedure TFrmPrincipal.actPCPQualidadesExecute(Sender: TObject);
-begin
-  FrmQualidades:=TFrmQualidades.Create(self);
-  FrmQualidades.Show;
-end;
-
-procedure TFrmPrincipal.actPCPProcessoMaquinasExecute(Sender: TObject);
-begin
-  FrmProcessos_Maquinas:=TFrmProcessos_Maquinas.Create(self);
-  FrmProcessos_Maquinas.Show;
-end;
-
-procedure TFrmPrincipal.actPCPProcessosExecute(Sender: TObject);
-begin
-  FrmProcessos:=TFrmProcessos.Create(self);
-  FrmProcessos.Show;
-end;
-
-procedure TFrmPrincipal.actPCPProcessosGradeExecute(Sender: TObject);
-begin
-  FrmProcessosGrade:=TFrmProcessosGrade.Create(self);
-  FrmProcessosGrade.Show;
-end;
-
-procedure TFrmPrincipal.actPCPProcessosOperadorExecute(Sender: TObject);
-begin
-  FrmProcessos_Operadores:=TFrmProcessos_Operadores.Create(self);
-  FrmProcessos_Operadores.Show;
-end;
-
-procedure TFrmPrincipal.actPCPFichaTecnicaExecute(Sender: TObject);
-begin
-  FrmFichaTecnica:=TFrmFichaTecnica.Create(self);
-  FrmFichaTecnica.Show;
-end;
-
-procedure TFrmPrincipal.actPCPRelatoriosExecute(Sender: TObject);
-begin
-   FrmRelatorioProducao := TFrmRelatorioProducao.create(self);
-   FrmRelatorioProducao.ShowModal;
-end;
-
-procedure TFrmPrincipal.actCadastrosTamanhosExecute(Sender: TObject);
-begin
-  FrmTamanhos:=TFrmTamanhos.Create(self);
-  FrmTamanhos.Show;
-end;
-
 procedure TFrmPrincipal.actTransporteRomaneioExecute(Sender: TObject);
 begin
    FrmRomaneio := TFrmRomaneio.create(self);
@@ -1185,12 +1032,6 @@ procedure TFrmPrincipal.Action134Execute(Sender: TObject);
 begin
    FrmRelDemonstrativo := TFrmRelDemonstrativo.create(self);
    FrmRelDemonstrativo.ShowModal;
-end;
-
-procedure TFrmPrincipal.Action1Execute(Sender: TObject);
-begin
-   FrmEditorTexto := TFrmEditorTexto.create(self);
-   FrmEditorTexto.ShowModal;
 end;
 
 procedure TFrmPrincipal.actCadastrosAuxiliaresCarteiraCobrancaExecute(Sender: TObject);
@@ -1422,12 +1263,6 @@ begin
 
 end;
 
-procedure TFrmPrincipal.actVendasExpressaExecute(Sender: TObject);
-begin
-  FrmVendaExpressa:=TFrmVendaExpressa.Create(self);
-  FrmVendaExpressa.Show;
-end;
-
 procedure TFrmPrincipal.actClassificacaoProdutosGruposExecute(Sender: TObject);
 begin
   FrmGrupos:=TFrmGrupos.Create(self);
@@ -1495,12 +1330,6 @@ begin
    end;
 end;
 
-procedure TFrmPrincipal.actEstoqueCodigoBarraJatoTintasExecute(Sender: TObject);
-begin
-  FrmEtiquetasWindows :=TFrmEtiquetasWindows.Create(self);
-  FrmEtiquetasWindows.ShowModal;
-end;
-
 procedure TFrmPrincipal.actConfigurarServidorExecute(Sender: TObject);
 begin
    FrmServidorSistema := TFrmServidorSistema.create(self);
@@ -1517,12 +1346,6 @@ procedure TFrmPrincipal.actEstoqueAtualizarExecute(Sender: TObject);
 begin
    FrmProdutosQuantidade := TFrmProdutosQuantidade.create(self);
    FrmProdutosQuantidade.ShowModal;
-end;
-
-procedure TFrmPrincipal.actEstoqueCodigoBarraTermicaExecute(Sender: TObject);
-begin
-   FrmEtiquetasGerar := TFrmEtiquetasGerar.create(self);
-   FrmEtiquetasGerar.Show;
 end;
 
 procedure TFrmPrincipal.actComprasPedidoExecute(Sender: TObject);
@@ -1549,12 +1372,6 @@ begin
   FrmCidadeIBGE.Show;
 end;
 
-procedure TFrmPrincipal.actConfigurarEtiquetasExecute(Sender: TObject);
-begin
-   FrmEtiquetaConfigurar := TFrmEtiquetaConfigurar.create(self);
-   FrmEtiquetaConfigurar.ShowModal;
-end;
-
 procedure TFrmPrincipal.actTerceirizadosPrecosServicosExecute(Sender: TObject);
 begin
   FrmTabelaPrecoServicos:=TFrmTabelaPrecoServicos.Create(self);
@@ -1565,19 +1382,6 @@ procedure TFrmPrincipal.actTerceirizadosRelatoriosExecute(Sender: TObject);
 begin
   FrmTerceirizadosRelatorios :=TFrmTerceirizadosRelatorios.Create(Self);
   FrmTerceirizadosRelatorios.showModal;
-end;
-
-procedure TFrmPrincipal.actPCPLoteProducaoExecute(Sender: TObject);
-begin
-  FrmLoteProducao:=TFrmLoteProducao.Create(self);
-  FrmLoteProducao.Show;
-end;
-
-procedure TFrmPrincipal.actAjudaCalendarioExecute(Sender: TObject);
-begin
-  FrmCalendario:=TFrmCalendario.Create(self);
-  FrmCalendario.Show;
-
 end;
 
 procedure TFrmPrincipal.actEstoquePesquisaEstoqueExecute(Sender: TObject);
@@ -1707,12 +1511,6 @@ procedure TFrmPrincipal.actSifatesMortoVendasExecute(Sender: TObject);
 begin
    FrmArquivoMorto :=TFrmArquivoMorto.create(self);
    FrmArquivoMorto.Showmodal;
-end;
-
-procedure TFrmPrincipal.actVendasPedidosConferenciaExecute(Sender: TObject);
-begin
-   FrmPedidoVendaConferencia :=TFrmPedidoVendaConferencia.Create(self);
-   FrmPedidoVendaConferencia.Show;
 end;
 
 procedure TFrmPrincipal.actVendasRelatoriosExecute(Sender: TObject);
@@ -1876,7 +1674,7 @@ begin
    // ------------------------------------------------------------------------
    // Carregar na memória DATAMODULEs
    BaseDados          := TBaseDados.create(self);
-   BaseDados_PCP      := TBaseDados_PCP.create(self);
+
    dmBaseComponentes  := TdmBaseComponentes.create(self);
 
    /// ------------------------------------------------------------------------
@@ -1962,12 +1760,6 @@ procedure TFrmPrincipal.Ribbon1HelpButtonClick(Sender: TObject);
 begin
   FrmAboutBox:=TFrmAboutBox.Create(Self);
   FrmAboutBox.ShowModal;
-end;
-
-procedure TFrmPrincipal.actTransporteEtiquetasExecute(Sender: TObject);
-begin
-  FrmEtiquetacaixa:=TFrmEtiquetacaixa.Create(self);
-  FrmEtiquetacaixa.Show;
 end;
 
 procedure TFrmPrincipal.actVendasPedidosEmitirExecute(Sender: TObject);
@@ -2090,30 +1882,6 @@ begin
     if LowerCase(mAction.Name)=LowerCase(trim(aItemMenu)) then
       mAction.Visible := aVisivel;
   end;
-end;
-
-procedure TFrmPrincipal.VerificarLicenca();
-var
-  mMensagem : String;
-begin
-  StatusCarregar('Checando licença de uso...');
-  FProsseguir := True;
-  if not FSistema.ChecarLicencaUso then
-    exit;
-  mMensagem := Format(_LICENCA_EXPIROU,[SITE_EMPRESA,FONE_EMPRESA,EMAIL_EMPRESA])+
-               sLineBreak+
-               sLineBreak+
-               ' Você já tem uma chave de ativação?';
-  if pergunta(mMensagem) = False then
-    TerminarAplicacao();
-  try
-    FrmAtivarSistema := TFrmAtivarSistema.Create(Self);
-    FProsseguir := FrmAtivarSistema.ShowModal = mrOk;
-  finally
-    FrmAtivarSistema.Free;
-  end;
-  if FProsseguir = False then
-    TerminarAplicacao();
 end;
 
 procedure TFrmPrincipal.WMNCHitTest(var Message: TWMNCHitTest);

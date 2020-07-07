@@ -125,7 +125,7 @@ var
 implementation
 
 uses FPrincipal, SQLServer, Biblioteca, Global,
-  FProdutosQuantidadeGrade,  Classe.Usuarios, FEntregadorDefinir;
+    Classe.Usuarios, FEntregadorDefinir;
 
 {$R *.dfm}
 
@@ -319,7 +319,7 @@ begin
 
     FrmEntregadorDefinir.ShowModal();
    finally
-    prcStatusMessage('','',False);
+    //prcStatusMessage('','',False);
     FreeAndNil(FrmEntregadorDefinir);
    end;
 

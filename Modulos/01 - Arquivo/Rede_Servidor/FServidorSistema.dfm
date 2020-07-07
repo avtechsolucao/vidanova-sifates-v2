@@ -297,7 +297,6 @@ object FrmServidorSistema: TFrmServidorSistema
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
-      OnClick = BtnServidorClick
     end
     object pnServidor: TPanel
       AlignWithMargins = True

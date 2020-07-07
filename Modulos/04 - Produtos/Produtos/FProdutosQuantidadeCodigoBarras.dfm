@@ -1764,6 +1764,7 @@ object FrmProdutosQuantidadeCodigoBarras: TFrmProdutosQuantidadeCodigoBarras
     inherited Image3: TImage
       Width = 450
       Height = 33
+      ExplicitWidth = 450
     end
     inherited pnTitulo: TPanel
       Width = 450
@@ -1776,13 +1777,17 @@ object FrmProdutosQuantidadeCodigoBarras: TFrmProdutosQuantidadeCodigoBarras
         Height = 25
         Caption = 'Confer'#234'ncia de estoque | C'#243'digo de Barras'
         ExplicitWidth = 504
+        ExplicitHeight = 25
       end
       inherited Image1: TImage
         Height = 31
+        ExplicitHeight = 31
       end
       inherited Image2: TImage
         Left = 391
         Height = 25
+        ExplicitLeft = 391
+        ExplicitHeight = 25
       end
     end
   end

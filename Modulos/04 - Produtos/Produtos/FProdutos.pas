@@ -299,8 +299,7 @@ var
 
 implementation
 
-uses FPrincipal, SQLServer, Biblioteca, Global, Classe.Usuarios, FBaseDados,
-  FProdutosGrade, FProdutosGradeEditar, MovProdutos;
+uses FPrincipal, SQLServer, Biblioteca, Global, Classe.Usuarios, FBaseDados, MovProdutos;
 
 {$R *.dfm}
 
@@ -334,7 +333,7 @@ begin
       DBEdit_Referencia.Enabled := True;
    end;
 
-   FrmProdutosGrade := TFrmProdutosGrade.create(self);
+   //FrmProdutosGrade := TFrmProdutosGrade.create(self);
 
    if (fncUsuario_retCampo(nUsuario,'PRODUTOVERPRECOS')='N') Then
    begin
@@ -723,7 +722,7 @@ begin
    End;
 
    FrmFrameBotoes1.SpbEditarClick(Sender);
-   FrmProdutosGrade.ShowModal;
+   //FrmProdutosGrade.ShowModal;
 end;
 
 procedure TFrmProdutos.CalculaCustos;
@@ -1113,11 +1112,7 @@ begin
    end
    else
    }
-   if ValidarReferenciaCorTamanho(strProduto) Then
-   Begin
-      FrmProdutosGradeEditar := TFrmProdutosGradeEditar.create(self);
-      FrmProdutosGradeEditar.ShowModal;
-   End;
+
    strProduto :='';
 
 end;

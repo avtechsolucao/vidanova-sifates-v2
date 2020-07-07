@@ -1252,7 +1252,6 @@ object FrmTerceirizadoLancaFinanceiro: TFrmTerceirizadoLancaFinanceiro
       RightMargin = 10.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
-      DataSetName = ''
       Frame.Typ = []
       object ReportSummary1: TfrxReportSummary
         FillType = ftBrush

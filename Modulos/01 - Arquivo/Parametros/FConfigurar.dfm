@@ -1089,6 +1089,10 @@ object FrmConfigurar: TFrmConfigurar
       object Tab_Operacionais: TTabSheet
         Caption = 'Par'#226'metros Operacionais'
         ImageIndex = 8
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox10: TGroupBox
           AlignWithMargins = True
           Left = 3

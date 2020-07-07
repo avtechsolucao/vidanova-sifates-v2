@@ -53,7 +53,7 @@ implementation
 
 
 
-uses  Classe.BancoDados, Classe.Global, FAutenticarAcao, FPrincipal;
+uses  Classe.BancoDados, Classe.Global, FPrincipal;
 
 { TUsuarios }
 class function TUsuario.Autenticar: Boolean;
@@ -61,9 +61,7 @@ Var
   mModalResult : Integer;
 begin
   Result := False;
-  FrmAutenticarAcao := TFrmAutenticarAcao.create(nil);
-  mModalResult:=FrmAutenticarAcao.ShowModal;
-  Result :=mModalResult=mrOk;
+    Result :=mModalResult=mrOk;
 end;
 
 constructor TUsuario.Create;

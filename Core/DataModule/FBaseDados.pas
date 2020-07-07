@@ -248,9 +248,8 @@ var
 
 implementation
 
-uses FPrincipal, FBaseDados_PCP, Biblioteca, Global, FCadClientes,
-   F_RelEst_Historico, FStatusNFe, SQLServer, FReciboImprimir,
-  FRelatorioProducao, FNotaFiscal, App.Constantes, App.Funcoes;
+uses FPrincipal, Biblioteca, Global, FCadClientes,
+   F_RelEst_Historico, SQLServer, FReciboImprimir, App.Constantes, App.Funcoes;
 
 {$R *.dfm}
 

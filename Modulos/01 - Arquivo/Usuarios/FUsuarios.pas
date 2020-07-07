@@ -131,7 +131,7 @@ var
 implementation
 
 uses FBaseDados, Biblioteca, Global, FPrincipal,
-   FRelatorioUsuario,  FCalendario, FUsuariosOnLine;
+   FRelatorioUsuario, FUsuariosOnLine;
 
 {$R *.DFM}
 

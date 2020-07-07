@@ -359,8 +359,7 @@ var
 implementation
 
 uses Biblioteca, FBaseDados, Global,
-   Clientes, FPrincipal, MovProdutos,
-   Biblioteca_pcp, FBaseDados_PCP, SQLServer,
+   Clientes, FPrincipal, MovProdutos, SQLServer,
   FControleCaixa, FControleBancario, App.Funcoes;
 
 {$R *.DFM}

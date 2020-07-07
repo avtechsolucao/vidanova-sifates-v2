@@ -339,7 +339,6 @@ type
       check_endereco : Boolean;
     procedure prcProcurarProduto;
     procedure prcSetarDadosCliente;
-    procedure prcAbriGrade;
 
    public
       { Public declarations }
@@ -352,10 +351,8 @@ var
 
 implementation
 
-uses FPrincipal, SQLServer, Biblioteca, Global, Classe.Usuarios, FPedidoVendaGrade,
-  FPedidoVendaGradePrecos, FBaseDados, FPedidoVendaParcial,
-  FTabelaPrecoValor, FPedidoVendaCodigoBarra, FastReport, FBaseDados_PCP,
-  FImpressao;
+uses FPrincipal, SQLServer, Biblioteca, Global, Classe.Usuarios, FBaseDados, FPedidoVendaParcial,
+  FTabelaPrecoValor, FastReport, FImpressao;
 
 {$R *.dfm}
 
@@ -468,7 +465,7 @@ begin
          db_PedidoItens.Post;
       End;
 
-      prcAbriGrade;
+      //prcAbriGrade;
    End;
 end;
 
@@ -538,10 +535,6 @@ begin
          db_PedidoItens.Post;
       End;
 
-      if ValidarReferenciaCorTamanho(strReferencia) Then
-      begin
-         prcAbriGrade;
-      end;
    End;
 
 end;
@@ -571,17 +564,14 @@ begin
       if (dbGrid_Produtos.SelectedField = db_PedidoItensQTDE) and
         not empty(strReferencia) then
       Begin
-         if ValidarReferenciaCorTamanho(strReferencia) Then
-         begin
-            prcAbriGrade;
-         end;
+
       End;
 
       // se o cursor estiver posicionado na coluna Valor Unitário
       if (dbGrid_Produtos.SelectedField = db_PedidoItensVLR_UNIT) and
         not empty(strReferencia) then
       Begin
-         prcAbriGrade;
+
       End;
    End
    else IF Key = VK_F8 Then
@@ -603,22 +593,6 @@ begin
          dbGrid_Produtos.Refresh;
       End;
      end;
-   end
-   else IF Key = VK_F9 Then
-   begin
-      // vincular tecidos na referencia
-      If (db_PedidoItens.State in [dsedit, dsinsert]) then
-      Begin
-         db_PedidoItens.Post;
-      End;
-
-      nPedidoVenda  := db_Pedido.FieldByName('CODIGO').AsInteger;
-      nTabelaPreco  := db_Pedido.FieldByName('TABELA').AsInteger;
-
-      FrmPedidoVendaCodigoBarra := TFrmPedidoVendaCodigoBarra.Create(self);
-      FrmPedidoVendaCodigoBarra.ShowModal;
-
-      CalculaPedido;
    end
    else if Key = VK_RETURN then
     begin
@@ -856,18 +830,6 @@ begin
    begin
       db_PedidoItens.FieldByName('VLR_UNIT').AsFloat :=   RetornaReferenciaPrecoVenda(strReferencia);
    end;
-
-
-   if ValidarReferenciaCorTamanho(strReferencia) Then
-   Begin
-      // SALVAR ITENS DO PEDIDO DE VENDA
-      If (db_PedidoItens.State in [dsedit, dsinsert]) then
-      Begin
-         db_PedidoItens.Post;
-      End;
-
-      prcAbriGrade;
-   End;
 
 end;
 
@@ -1201,7 +1163,7 @@ end;
 procedure TFrmPedidoVenda.FrmFrameBotoes1SpbSalvarClick(Sender: TObject);
 begin
   try
-     prcStatusMessage('Gravando Pedido de Venda','Gravando Pedido...');
+     //prcStatusMessage('Gravando Pedido de Venda','Gravando Pedido...');
      FrmFrameBotoes1.SpbSalvarClick(Sender);
      If (db_PedidoItens.State in [dsedit, dsinsert]) then
      Begin
@@ -1210,7 +1172,7 @@ begin
      CalculaPedido;
      FrmFrameBotoes1SpbImprimirClick(Sender);
   finally
-    prcStatusMessage('','',false);
+    //prcStatusMessage('','',false);
   end;
 end;
 
@@ -1242,37 +1204,6 @@ begin
       db_PedidoItens.Post;
    End;
 
-end;
-
-procedure TFrmPedidoVenda.prcAbriGrade;
-var
- mIDX : Integer;
-begin
-   if (FParametros.Quantificar='NORMAL') then
-     Exit;
-
-   strReferencia :=db_PedidoItens.FieldByName('REFERENCIA').AsString;
-   mIDX          :=db_PedidoItens.FieldByName('IDX').AsInteger;
-
-   try
-     if (db_PedidoItens.State in [dsedit, dsinsert]) then
-     Begin
-        db_PedidoItens.Post;
-     End;
-
-     if blProdutoViaLeitor=False then
-     begin
-        FrmPedidoVendaGrade := TFrmPedidoVendaGrade.Create(self);
-        FrmPedidoVendaGrade.FIDEmpresa      :=db_Pedido.FieldByName('EMPRESA').AsInteger;
-        FrmPedidoVendaGrade.FIDPedido       :=db_Pedido.FieldByName('CODIGO').AsInteger;
-        FrmPedidoVendaGrade.FIDPedidoItens  :=mIDX;
-        FrmPedidoVendaGrade.FProduto        :=strReferencia;
-        FrmPedidoVendaGrade.ShowModal;
-     end;
-   finally
-       db_PedidoItens.Refresh;
-       FrmFrameBotoes1SpbSalvarClick(self);
-   end;
 end;
 
 procedure TFrmPedidoVenda.EditKeyDown(Sender: TObject; var Key: Word;

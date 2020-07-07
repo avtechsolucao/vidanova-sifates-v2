@@ -274,7 +274,7 @@ begin
       End;
     FrmImpressao.ShowModal();
   finally
-    prcStatusMessage('','',False);
+    //prcStatusMessage('','',False);
     FreeAndNil(FrmImpressao);
   end;
 
@@ -603,9 +603,9 @@ begin
          DB_FaturadoParcial.ParamByName('DATA1').AsDateTime := dtDataIni;
          DB_FaturadoParcial.ParamByName('DATA2').AsDateTime := dtDataFim;
 
-         prcStatusMessage('Faturamento Parcial de Pedidos','processando informações, aguarde...',True);
+         //prcStatusMessage('Faturamento Parcial de Pedidos','processando informações, aguarde...',True);
          DB_FaturadoParcial.open;
-         prcStatusMessage('Faturamento Parcial de Pedidos','',False);
+         //prcStatusMessage('Faturamento Parcial de Pedidos','',False);
 
       End;
     4:Begin
